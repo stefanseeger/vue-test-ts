@@ -46,4 +46,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: run:e2e
-        run: run:e2e
+        run: yarn run:e2e
