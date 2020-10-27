@@ -45,7 +45,7 @@ jobs:
         run: git status
 
       - name: rename dist to docs for GitHub Pages
-        run: mv dist docs
+        run: mv dist docs2
 
       - name: status after
         run: git status
