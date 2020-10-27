@@ -41,11 +41,11 @@ jobs:
       - name: build
         run: yarn run build
 
-      - name: status before
-        run: git status
+      - name: rm -rf docs
+        run: rm -rf docs
 
       - name: rename dist to docs for GitHub Pages
-        run: mv dist docs2
+        run: mv dist docs
 
       - name: status after
         run: git status
