@@ -51,8 +51,6 @@ jobs:
           branch: pages
           # The message for the commit
           message: pages
-          # Arguments for the git tag command (the tag name always needs to be the first word not preceded by a hyphen)
-          tag: pages
 
   e2e:
     # The type of runner that the job will run on
