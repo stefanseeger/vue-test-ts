@@ -47,9 +47,6 @@ jobs:
       - name: rename dist to docs for GitHub Pages
         run: mv dist docs
 
-      - name: status after
-        run: git status
-
       - name: Add & Commit
         uses: EndBug/add-and-commit@v5.1.0
         env:
