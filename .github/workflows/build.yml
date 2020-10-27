@@ -40,37 +40,17 @@ jobs:
       - name: build
         run: yarn run build
 
-      - name: git add
-        run: git add .
-
-      - name: git add
-        run: git add .
-
-      - name: git commit
-        run: git commit -m "release"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: git tag
-        run: git tag release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: git push
-        run: git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: git reset
-        run: git reset HEAD~1 --hard
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: git push -f
-        run: git push -f
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
+      - name: Add & Commit
+        uses: EndBug/add-and-commit@v5.1.0
+        with:
+          # The name of the user that will be displayed as the author of the commit
+          author_name: CI
+          # Name of the branch to use, if different from the one that triggered the workflow
+          branch: release
+          # The message for the commit
+          message: release
+          # Arguments for the git tag command (the tag name always needs to be the first word not preceded by a hyphen)
+          tag: releasel
 
   e2e:
     # The type of runner that the job will run on
@@ -80,6 +60,19 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          # yarn cache files are stored in `~/.yarn` on Linux/macOS
+          path: ~/.yarn
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
 
       - name: install
         run: yarn
