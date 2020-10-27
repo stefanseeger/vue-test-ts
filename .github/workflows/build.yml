@@ -42,6 +42,9 @@ jobs:
 
       - name: rename
         run: mv dist docs
+      
+      - name: ls
+        run: ls
 
       - name: Add & Commit
         uses: EndBug/add-and-commit@v5.1.0
