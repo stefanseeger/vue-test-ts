@@ -42,7 +42,7 @@ jobs:
 
       - name: rename
         run: mv dist docs
-      
+
       - name: ls
         run: ls
 
@@ -50,13 +50,6 @@ jobs:
         uses: EndBug/add-and-commit@v5.1.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          # The name of the user that will be displayed as the author of the commit
-          author_name: CI
-          # Name of the branch to use, if different from the one that triggered the workflow
-          branch: docs
-          # The message for the commit
-          message: docs
 
   e2e:
     # The type of runner that the job will run on
