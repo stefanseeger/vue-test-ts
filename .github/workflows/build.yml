@@ -50,6 +50,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           add: docs
+          branch: master
+
 
       - name: test:e2e:record
         run: yarn test:e2e:record
