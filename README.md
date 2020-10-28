@@ -2,6 +2,7 @@
 
 ![CI](https://github.com/stefanseeger/vue-test-ts/workflows/CI/badge.svg) 
 ![e2e](https://github.com/stefanseeger/vue-test-ts/workflows/e2e/badge.svg)
+![CodeQL](https://github.com/stefanseeger/vue-test-ts/workflows/CodeQL/badge.svg)
 
 ## Project setup
 ```
