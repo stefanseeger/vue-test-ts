@@ -1,5 +1,7 @@
 # vue-test-ts
 
+![e2e](https://github.com/stefanseeger/vue-test-ts/workflows/e2e/badge.svg)
+
 ## Project setup
 ```
 yarn install
