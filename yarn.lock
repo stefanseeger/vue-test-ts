@@ -1622,10 +1622,10 @@
   resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.0.2.tgz#419bd85a2ebdbd4f42963e98c5a1b103452176d9"
   integrity sha512-Zx869zlNoujFOclKIoYmkh8ES2RcS/+Jn546yOiPyZ+3+Ejivnr+fb8l+DdXUEFjo+iVDNR3KyLzg03aBFfZ4Q==
 
-"@vue/test-utils@^2.0.0-0":
-  version "2.0.0-beta.7"
-  resolved "https://registry.yarnpkg.com/@vue/test-utils/-/test-utils-2.0.0-beta.7.tgz#27751991e0b013ee4af487e51e16a58d477e5857"
-  integrity sha512-cAe7VqoxxkxTr/2N93UpW/LQbcUVKC+QRA3ZBq5ZWImtAf/8jtcdC2mQ9g4AKmSvyaKQtqxrRn4i/y5z7yrrKA==
+"@vue/test-utils@^2.0.0-beta.8":
+  version "2.0.0-beta.8"
+  resolved "https://registry.yarnpkg.com/@vue/test-utils/-/test-utils-2.0.0-beta.8.tgz#13be1a31f4d6d396e2a9d595d4e0f236421eba98"
+  integrity sha512-ksQYCzBINZy9iSb9jCo3AbfTEQ2Xw7NEyGA07frqNZ3tHG4pBnnRrTi+zoS7wi89f41eyx2zVhAF/mvzDKNG2A==
 
 "@vue/web-component-wrapper@^1.2.0":
   version "1.2.0"
@@ -8448,10 +8448,10 @@ sass-loader@^8.0.2:
     schema-utils "^2.6.1"
     semver "^6.3.0"
 
-sass@^1.26.5:
-  version "1.27.0"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.27.0.tgz#0657ff674206b95ec20dc638a93e179c78f6ada2"
-  integrity sha512-0gcrER56OkzotK/GGwgg4fPrKuiFlPNitO7eUJ18Bs+/NBlofJfMxmxqpqJxjae9vu0Wq8TZzrSyxZal00WDig==
+sass@^1.29.0:
+  version "1.29.0"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.29.0.tgz#ec4e1842c146d8ea9258c28c141b8c2b7c6ab7f1"
+  integrity sha512-ZpwAUFgnvAUCdkjwPREny+17BpUj8nh5Yr6zKPGtLNTLrmtoRYIjm7njP24COhjJldjwW1dcv52Lpf4tNZVVRA==
   dependencies:
     chokidar ">=2.0.0 <4.0.0"
 
@@ -9796,10 +9796,10 @@ vue-loader@^15.9.2:
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
 
-vue-router@^4.0.0-0:
-  version "4.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-4.0.0-rc.1.tgz#42f41315849163a1243886c9aa6d7c14f24fd003"
-  integrity sha512-N3SSOIiRFo1/D6EkHGuahUSuyDvFhKizN5zVXkALX7wv0hYYndV49KwzRF5lKsAIt+OlDl7y+sNmwNewb7a4iw==
+vue-router@^4.0.0-rc.2:
+  version "4.0.0-rc.2"
+  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-4.0.0-rc.2.tgz#8545cab76a05ca4f6dffbe6c6a671a4dbf585ab2"
+  integrity sha512-51mBp39rzBFpk1nyU9SkhPcwR67gBzWIH8p3pyeDmtNYgWzGF3q8MneD/xbMwsfTQkw2H1qBk6uwRaVy3M8Nxw==
 
 vue-style-loader@^4.1.0, vue-style-loader@^4.1.2:
   version "4.1.2"
@@ -9823,10 +9823,10 @@ vue@^3.0.0:
     "@vue/runtime-dom" "3.0.2"
     "@vue/shared" "3.0.2"
 
-vuex@^4.0.0-0:
-  version "4.0.0-beta.4"
-  resolved "https://registry.yarnpkg.com/vuex/-/vuex-4.0.0-beta.4.tgz#7b319ead2ef30432b7eaa4e37258ea3c5e44f698"
-  integrity sha512-/+4E1dokq5cwbl4mohOqOj8h0vOLOWmLSqlqTf++bfmN9/JKWtwYfsBrzlK0sYrNfuYcpQeX0BVxQHoHXDfYZQ==
+vuex@^4.0.0-rc.1:
+  version "4.0.0-rc.1"
+  resolved "https://registry.yarnpkg.com/vuex/-/vuex-4.0.0-rc.1.tgz#160cd5957972a61c7c01ab585995b78e092a298d"
+  integrity sha512-zgXVCQygF1Sm7ezyudEEMynoV2PBxZdcjE12D0BY1xIKZMrA7GFP6xqADTEAzwfVemXboExJ+/KThfxJFtM/5w==
 
 w3c-hr-time@^1.0.1:
   version "1.0.2"
