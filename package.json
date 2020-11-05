@@ -1,14 +1,17 @@
 {
   "name": "vue-test-ts",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "scripts": {
-    "serve": "eslint --fix && vue-cli-service serve",
-    "build": "eslint --fix && vue-cli-service build",
-    "test:unit": "eslint --fix && vue-cli-service test:unit",
-    "test:e2e": "eslint --fix && vue-cli-service test:e2e",
-    "test:e2e:record": "eslint --fix && cypress run --record --key 9ad09698-40a4-4be1-82ca-b87bc91a5a2a --config-file cypress.prod.json",
-    "lint": "eslint --fix && vue-cli-service lint"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "test:unit": "vue-cli-service test:unit",
+    "test:e2e": "vue-cli-service test:e2e",
+    "test:e2e:record": "cypress run --record --key 9ad09698-40a4-4be1-82ca-b87bc91a5a2a --config-file cypress.prod.json",
+    "lint": "vue-cli-service lint",
+    "postinstall": "husky install",
+    "prepublish": "pinst --disable",
+    "postpublish": "pinst --enable"
   },
   "dependencies": {
     "core-js": "^3.6.5",
@@ -40,6 +43,8 @@
     "eslint": "^6.7.2",
     "eslint-plugin-prettier": "^3.1.3",
     "eslint-plugin-vue": "^7.0.0-0",
+    "husky": "^5.0.0-beta.0",
+    "pinst": "^2.0.0",
     "prettier": "^1.19.1",
     "sass": "^1.29.0",
     "sass-loader": "^8.0.2",
