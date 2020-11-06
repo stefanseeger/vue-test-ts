@@ -43,8 +43,6 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      - uses: dorny/paths-filter@v2
-        id: filter
         
       - name: Cache node modules
         uses: actions/cache@v2
