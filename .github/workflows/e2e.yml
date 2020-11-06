@@ -7,6 +7,10 @@ name: e2e
 on:
   schedule:
     - cron: '0 0 * * *'
+  page_build:
+  workflow_dispatch:
+    
+    
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -32,12 +36,19 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
-
-      - name: install
-        run: yarn
-
-      - name: test:e2e:record
-        run: yarn test:e2e:record
+            
+      - name: e2e
+        uses: dorny/paths-filter@v2
+        id: changes
+        with:
+          filters: |
+            docs:
+              - 'docs/**'
+          # run only if some file in 'docs' folder was changed
+          if: steps.changes.outputs.docs == 'true'
+          run: |
+            yarn
+            yarn test:e2e:record
 
 
 
