@@ -7,7 +7,6 @@ name: e2e
 on:
   schedule:
     - cron: '0 0 * * *'
-  page_build:
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
