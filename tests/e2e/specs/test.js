@@ -8,7 +8,7 @@ describe("My First Test", () => {
       .eq(0)
       .should("have.text", "Home");
 
-      cy.get("a")
+    cy.get("a")
       .eq(1)
       .should("have.text", "About");
   });
@@ -35,24 +35,27 @@ describe("Test Navigation", () => {
       "have.text",
       "Welcome to GitHub Pages Vue.js + TypeScript App example"
     );
+    cy.screenshot();
   });
 
   it("Should correctly navigate to About", () => {
     cy.get("a")
       .eq(1)
       .click();
-    cy.url().should("include", "/about")
+    cy.url().should("include", "/about");
     cy.get("h1").should("have.text", "This is an about page");
+    cy.screenshot();
   });
 
   it("Should correctly navigate back to Home", () => {
     cy.get("a")
       .eq(0)
       .click();
-    cy.url().should("include", "/")
+    cy.url().should("include", "/");
     cy.get("h1").should(
       "have.text",
       "Welcome to GitHub Pages Vue.js + TypeScript App example"
     );
+    cy.screenshot();
   });
 });
