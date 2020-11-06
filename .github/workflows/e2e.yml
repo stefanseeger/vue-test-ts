@@ -9,8 +9,6 @@ on:
     - cron: '0 0 * * *'
   page_build:
   workflow_dispatch:
-    
-    
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -23,6 +21,12 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+      - uses: dorny/paths-filter@v2
+        id: filter
+        with:
+          filters: |
+            docs:
+              - 'docs/**'
 
       - name: Cache node modules
         uses: actions/cache@v2
@@ -36,19 +40,16 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
-            
-      - name: e2e
-        uses: dorny/paths-filter@v2
-        id: changes
-        with:
-          filters: |
-            docs:
-              - 'docs/**'
-          # run only if some file in 'docs' folder was changed
-          if: steps.changes.outputs.docs == 'true'
-          run: |
-            yarn
-            yarn test:e2e:record
+        
+      - name: yarn
+        # run only if some file in 'docs' folder was changed
+        if: steps.changes.outputs.docs == 'true'
+        run: yarn
+        
+      - name: yarn test:e2e:record
+        # run only if some file in 'docs' folder was changed
+        if: steps.changes.outputs.docs == 'true'
+        run: yarn test:e2e:record
 
 
 
