@@ -42,12 +42,6 @@ jobs:
           CYPRESS_KEY: ${{ secrets.CYPRESS_KEY }}
         run: yarn cypress run --record --key "$CYPRESS_KEY" --config-file cypress.prod.json
 
-      - name: code coverage
-        uses: romeovs/lcov-reporter-action@v0.2.11
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          lcov-file: ./coverage/lcov.info
-
 
 
 
