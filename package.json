@@ -7,6 +7,8 @@
     "build": "yarn lint && vue-cli-service build",
     "test:unit": "yarn lint && vue-cli-service test:unit",
     "test:e2e": "yarn lint && vue-cli-service test:e2e",
+    "test:e2e:headless": "yarn vue-cli-service test:e2e --headless",
+    "test:e2e:c5": "yarn cypress open --config-file cypress.local.json",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -23,15 +25,15 @@
     "@types/mocha": "^5.2.4",
     "@typescript-eslint/eslint-plugin": "^2.33.0",
     "@typescript-eslint/parser": "^2.33.0",
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-plugin-e2e-cypress": "~4.5.0",
-    "@vue/cli-plugin-eslint": "~4.5.0",
-    "@vue/cli-plugin-pwa": "~4.5.0",
-    "@vue/cli-plugin-router": "~4.5.0",
-    "@vue/cli-plugin-typescript": "~4.5.0",
-    "@vue/cli-plugin-unit-mocha": "~4.5.0",
-    "@vue/cli-plugin-vuex": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
+    "@vue/cli-plugin-babel": "^4.5.0",
+    "@vue/cli-plugin-e2e-cypress": "^4.5.0",
+    "@vue/cli-plugin-eslint": "^4.5.0",
+    "@vue/cli-plugin-pwa": "^4.5.0",
+    "@vue/cli-plugin-router": "^4.5.0",
+    "@vue/cli-plugin-typescript": "^4.5.0",
+    "@vue/cli-plugin-unit-mocha": "^4.5.0",
+    "@vue/cli-plugin-vuex": "^4.5.0",
+    "@vue/cli-service": "^4.5.0",
     "@vue/compiler-sfc": "^3.0.0",
     "@vue/eslint-config-prettier": "^6.0.0",
     "@vue/eslint-config-typescript": "^5.0.2",
@@ -47,6 +49,7 @@
     "prettier": "^1.19.1",
     "sass": "^1.29.0",
     "sass-loader": "^8.0.2",
-    "typescript": "~3.9.3"
+    "typescript": "^3.9.3",
+    "cypress":"^5.2.0"
   }
 }
