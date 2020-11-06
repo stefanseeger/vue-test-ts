@@ -76,6 +76,39 @@ jobs:
         with:
           message: "Replace docs with latests dist"
 
+    test:
+      needs: build
+      runs-on: ubuntu@latest
+
+      steps:
+
+        - uses: actions/checkout@v2
+        
+        - name: Cache node modules
+          uses: actions/cache@v2
+          env:
+            cache-name: cache-node-modules
+          with:
+            # yarn cache files are stored in `~/.yarn` on Linux/macOS
+            path: ~/.yarn
+            key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+            restore-keys: |
+              ${{ runner.os }}-build-${{ env.cache-name }}-
+              ${{ runner.os }}-build-
+              ${{ runner.os }}-
+
+        - name: install
+          run: yarn
+
+        - name: build
+          run: yarn test:e2e
+
+        - if: github.event_name == 'pull_request
+          name: code coverage
+          uses: romeovs/lcov-reporter-action@v0.2.11
+          with:
+            github-token: ${{ secrets.GITHUB_TOKEN }}
+
 
 
 
