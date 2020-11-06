@@ -43,7 +43,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-        
+
       - name: Cache node modules
         uses: actions/cache@v2
         env:
@@ -78,6 +78,15 @@ jobs:
         uses: romeovs/lcov-reporter-action@v0.2.17
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Add & Commit
+        uses: EndBug/add-and-commit@v5.1.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          message: "Replace docs with latests dist"
+
+
 
 
       - if: github.event_name != 'pull_request'
