@@ -17,12 +17,13 @@ jobs:
     runs-on: ubuntu-latest
     # Set job outputs to values from filter step
     outputs:
-      build: ${{ steps.filter.outputs.backend }}
+      build: ${{ steps.filter.outputs.build }}
     steps:
       - uses: actions/checkout@v2
       # For pull requests it's not necessary to checkout the code
       - uses: dorny/paths-filter@v2
         id: filter
+
         with:
           filters: |
             build:
