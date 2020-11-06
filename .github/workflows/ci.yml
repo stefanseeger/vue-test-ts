@@ -101,7 +101,9 @@ jobs:
         run: yarn
 
       - name: e2e
-        run: yarn vue-cli-service test:e2e --headless
+        env:
+          CYPRESS_KEY: ${{ secrets.CYPRESS_KEY }}
+        run: yarn vue-cli-service test:e2e --record --key "$CYPRESS_KEY" --headless
 
       - if: github.event_name == 'pull_request'
         name: code coverage
