@@ -67,39 +67,7 @@ jobs:
         run: |
           rm -r docs
           mv dist docs
-
-
-      - name: Add & Commit
-        uses: EndBug/add-and-commit@v5.1.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          message: "Replace docs with latests dist"
-
-  test:
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
-
-      - uses: actions/checkout@v2
-        
-      - name: Cache node modules
-        uses: actions/cache@v2
-        env:
-          cache-name: cache-node-modules
-        with:
-          # yarn cache files are stored in `~/.yarn` on Linux/macOS
-          path: ~/.yarn
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
-
-      - name: install
-        run: yarn
-
+          
       - name: e2e
         env:
           CYPRESS_KEY: ${{ secrets.CYPRESS_KEY }}
@@ -112,5 +80,12 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
 
+      - if: github.event_name != 'pull_request'
+        name: Add & Commit
+        uses: EndBug/add-and-commit@v5.1.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          message: "Update docs and coverage"
 
 
