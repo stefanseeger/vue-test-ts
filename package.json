@@ -7,7 +7,6 @@
     "build": "yarn lint && vue-cli-service build",
     "test:unit": "yarn lint && vue-cli-service test:unit",
     "test:e2e": "yarn lint && vue-cli-service test:e2e",
-    "test:e2e:record": "cypress run --record --key 9ad09698-40a4-4be1-82ca-b87bc91a5a2a --config-file cypress.prod.json",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {

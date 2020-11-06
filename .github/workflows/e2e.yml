@@ -39,16 +39,18 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
-        
+
       - name: yarn
         # run only if some file in 'docs' folder was changed
         if: steps.changes.outputs.docs == 'true'
         run: yarn
-        
+
       - name: yarn test:e2e:record
+        env:
+          CYPRESS_KEY: ${{ secrets.CYPRESS_KEY }}
         # run only if some file in 'docs' folder was changed
         if: steps.changes.outputs.docs == 'true'
-        run: yarn test:e2e:record
+        run: cypress run --record --key "$CYPRESS_KEY" --config-file cypress.prod.json
 
 
 
