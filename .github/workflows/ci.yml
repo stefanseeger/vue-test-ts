@@ -100,8 +100,8 @@ jobs:
       - name: install
         run: yarn
 
-      - name: build
-        run: yarn test:e2e
+      - name: e2e
+        run: yarn vue-cli-service test:e2e --headless
 
       - if: github.event_name == 'pull_request'
         name: code coverage
