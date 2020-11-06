@@ -79,7 +79,8 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Add & Commit
+      - if: github.event_name != 'pull_request'
+        name: Add & Commit
         uses: EndBug/add-and-commit@v5.1.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
