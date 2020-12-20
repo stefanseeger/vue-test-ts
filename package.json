@@ -7,8 +7,8 @@
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e",
-    "test:e2e:headless": "npm run vue-cli-service test:e2e --headless",
-    "test:e2e:c5": "npm run cypress open --config-file cypress.local.json",
+    "test:e2e:headless": "vue-cli-service test:e2e --headless",
+    "test:e2e:c5": "yarn cypress open --config-file cypress.local.json",
     "lint": "vue-cli-service lint --fix"
   },
   "dependencies": {
@@ -40,7 +40,7 @@
     "babel-jest": "^26.6.3",
     "babel-loader": "^8.1.0",
     "babel-plugin-istanbul": "^6.0.0",
-    "cypress": "^6.1.0",
+    "cypress": "^5.6.0",
     "eslint": "^6.7.2",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-vue": "^7.0.0-0",

@@ -41,7 +41,7 @@ jobs:
       - name: npm run test:e2e:record
         env:
           CYPRESS_KEY: ${{ secrets.CYPRESS_KEY }}
-        run: npm cypress run --record --key "$CYPRESS_KEY" --config-file cypress.prod.json
+        run: yarn cypress run --record --key "$CYPRESS_KEY" --config-file cypress.prod.json
 
 
 
