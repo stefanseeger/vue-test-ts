@@ -12,8 +12,8 @@
 // You can read more here:
 // https://on.cypress.io/configuration
 // ***********************************************************
-import "./commands";
-import "@cypress/code-coverage/support";
+import './commands';
+import '@cypress/code-coverage/support';
 
 // Import commands.js using ES2015 syntax:
 // Alternatively you can use CommonJS syntax:

@@ -9,18 +9,20 @@
 // /* eslint-disable import/no-extraneous-dependencies, global-require */
 // const webpack = require('@cypress/webpack-preprocessor')
 module.exports = (on, config) => {
+  /* eslint-disable import/no-extraneous-dependencies, global-require */
   // eslint-disable-next-line @typescript-eslint/no-var-requires
-  require("@cypress/code-coverage/task")(on, config);
+  require('@cypress/code-coverage/task')(on, config);
   // on('file:preprocessor', webpack({
   //  webpackOptions: require('@vue/cli-service/webpack.config'),
   //  watchOptions: {}
   // }))
 
-  return Object.assign({}, config, {
-    fixturesFolder: "tests/e2e/fixtures",
-    integrationFolder: "tests/e2e/specs",
-    screenshotsFolder: "tests/e2e/screenshots",
-    videosFolder: "tests/e2e/videos",
-    supportFile: "tests/e2e/support/index.js"
-  });
+  return {
+    ...config,
+    fixturesFolder: 'tests/e2e/fixtures',
+    integrationFolder: 'tests/e2e/specs',
+    screenshotsFolder: 'tests/e2e/screenshots',
+    videosFolder: 'tests/e2e/videos',
+    supportFile: 'tests/e2e/support/index.js',
+  };
 };

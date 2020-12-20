@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1604696302816" clover="3.2.0">
-  <project timestamp="1604696302817" name="All files">
-    <metrics statements="26" coveredstatements="15" conditionals="4" coveredconditionals="2" methods="16" coveredmethods="5" elements="46" coveredelements="22" complexity="0" loc="26" ncloc="26" packages="3" files="6" classes="6"/>
+<coverage generated="1604677618216" clover="3.2.0">
+  <project timestamp="1604677618216" name="All files">
+    <metrics statements="13" coveredstatements="8" conditionals="2" coveredconditionals="1" methods="8" coveredmethods="3" elements="23" coveredelements="12" complexity="0" loc="13" ncloc="13" packages="2" files="3" classes="3"/>
     <package name="vue-test-ts">
-      <metrics statements="13" coveredstatements="7" conditionals="2" coveredconditionals="1" methods="8" coveredmethods="2"/>
       <file name="main.ts" path="/home/runner/work/vue-test-ts/vue-test-ts/G:\git_clones\vue-test-ts\src\main.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="7" count="3" type="stmt"/>
@@ -28,22 +27,21 @@
       </file>
     </package>
     <package name="vue-test-ts.src">
-      <metrics statements="10" coveredstatements="5" conditionals="2" coveredconditionals="1" methods="7" coveredmethods="2"/>
       <file name="main.ts" path="/home/runner/work/vue-test-ts/vue-test-ts/src/main.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="7" count="6" type="stmt"/>
       </file>
       <file name="registerServiceWorker.ts" path="/home/runner/work/vue-test-ts/vue-test-ts/src/registerServiceWorker.ts">
-        <metrics statements="9" coveredstatements="4" conditionals="2" coveredconditionals="1" methods="7" coveredmethods="2"/>
+        <metrics statements="9" coveredstatements="1" conditionals="2" coveredconditionals="1" methods="7" coveredmethods="0"/>
         <line num="5" count="6" type="cond" truecount="1" falsecount="1"/>
-        <line num="6" count="6" type="stmt"/>
-        <line num="8" count="2" type="stmt"/>
-        <line num="14" count="2" type="stmt"/>
+        <line num="6" count="7" type="stmt"/>
+        <line num="8" count="7" type="stmt"/>
+        <line num="14" count="6" type="stmt"/>
         <line num="17" count="0" type="stmt"/>
         <line num="20" count="0" type="stmt"/>
         <line num="23" count="0" type="stmt"/>
         <line num="26" count="0" type="stmt"/>
-        <line num="31" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
       </file>
     </package>
     <package name="vue-test-ts.src.router">
@@ -51,8 +49,8 @@
       <file name="index.ts" path="/home/runner/work/vue-test-ts/vue-test-ts/src/router/index.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="4" count="6" type="stmt"/>
-        <line num="17" count="2" type="stmt"/>
-        <line num="21" count="6" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="21" count="7" type="stmt"/>
       </file>
     </package>
   </project>
