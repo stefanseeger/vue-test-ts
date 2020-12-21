@@ -1,0 +1,41 @@
+# This is a basic workflow to help you get started with Actions
+
+name: e2e
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the main branch
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+
+  e2e:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: npm
+        run: npm install
+
+      - name: npx cypress run --record
+        env:
+          CYPRESS_KEY: ${{ secrets.CYPRESS_KEY }}
+        run: npx cypress run --record --config-file cypress.prod.json
+
+
+
+

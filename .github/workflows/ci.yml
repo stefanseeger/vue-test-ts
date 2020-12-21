@@ -1,0 +1,106 @@
+# This is a basic workflow to help you get started with Actions
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # JOB to run change detection
+  changes:
+    runs-on: ubuntu-latest
+    # Set job outputs to values from filter step
+    outputs:
+      build: ${{ steps.filter.outputs.build }}
+    steps:
+      - uses: actions/checkout@v2
+      # For pull requests it's not necessary to checkout the code
+      - uses: dorny/paths-filter@v2
+        id: filter
+
+        with:
+          filters: |
+            build:
+              - 'package.json'
+              - '**/package.json'
+              - 'src/**'
+              - 'public/**'
+              - '.github/workflows/ci.yml'
+
+  test:
+    runs-on: ubuntu-latest
+    needs: changes
+    if: ${{ needs.changes.outputs.build == 'true' }}
+    steps:
+       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      - name: cache
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: install
+        run: npm install
+
+      - name: test
+        run: npm run test:unit
+
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    needs: changes
+    if: ${{ needs.changes.outputs.build == 'true' }}
+    steps:
+       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      - name: cache
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: install
+        run: npm install
+
+      - name: build
+        run: npm run build
+
+      - name: replace docs with new dist
+        run: |
+          rm -r docs
+          mv dist docs
+
+      - name: e2e
+        run: npm run vue-cli-service test:e2e --record --headless
+
+      - if: github.event_name == 'pull_request'
+        name: code coverage
+        uses: romeovs/lcov-reporter-action@v0.2.17
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - if: github.event_name != 'pull_request'
+        name: Add & Commit
+        uses: EndBug/add-and-commit@v5.1.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          message: "Replace docs with latests dist"
+
+      - if: github.event_name != 'pull_request'
+        name: Add & Commit
+        uses: EndBug/add-and-commit@v5.1.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          message: "Update docs and coverage"
