@@ -1,5 +1,0 @@
-{"total": {"lines":{"total":13,"covered":8,"skipped":0,"pct":61.54},"statements":{"total":13,"covered":8,"skipped":0,"pct":61.54},"functions":{"total":8,"covered":3,"skipped":0,"pct":37.5},"branches":{"total":2,"covered":1,"skipped":0,"pct":50}}
-,"/home/runner/work/vue-test-ts/vue-test-ts/src/main.ts": {"lines":{"total":1,"covered":1,"skipped":0,"pct":100},"functions":{"total":0,"covered":0,"skipped":0,"pct":100},"statements":{"total":1,"covered":1,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
-,"/home/runner/work/vue-test-ts/vue-test-ts/src/registerServiceWorker.ts": {"lines":{"total":9,"covered":4,"skipped":0,"pct":44.44},"functions":{"total":7,"covered":2,"skipped":0,"pct":28.57},"statements":{"total":9,"covered":4,"skipped":0,"pct":44.44},"branches":{"total":2,"covered":1,"skipped":0,"pct":50}}
-,"/home/runner/work/vue-test-ts/vue-test-ts/src/router/index.ts": {"lines":{"total":3,"covered":3,"skipped":0,"pct":100},"functions":{"total":1,"covered":1,"skipped":0,"pct":100},"statements":{"total":3,"covered":3,"skipped":0,"pct":100},"branches":{"total":0,"covered":0,"skipped":0,"pct":100}}
-}
