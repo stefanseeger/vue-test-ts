@@ -81,7 +81,7 @@ jobs:
           mv dist docs
 
       - name: e2e
-        run: npx vue-cli-service test:e2e --record --headless
+        run: npx vue-cli-service test:e2e --headless
 
       - if: github.event_name == 'pull_request'
         name: code coverage
