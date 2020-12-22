@@ -33,7 +33,7 @@ jobs:
 
       - name: npx cypress run --record
         env:
-          CYPRESS_KEY: ${{ secrets.CYPRESS_KEY }}
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
         run: npx cypress run --record --config-file cypress.prod.json
 
 
