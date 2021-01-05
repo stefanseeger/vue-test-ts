@@ -4,6 +4,7 @@
     <HelloWorld
       msg="Welcome to the GitHub Pages Vue.js + TypeScript App example"
     />
+    <div v-if="$store.user">{{ user.username }}</div>
   </div>
 </template>
 
