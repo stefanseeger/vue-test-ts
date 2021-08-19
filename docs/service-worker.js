@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/vue-test-ts/precache-manifest.3aae0e713979705afb51d067d12c923a.js"
+  "/vue-test-ts/precache-manifest.59ebf12156ee3c9a730b9bca8d4b861a.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "vue-cypress-jest-ts"});
