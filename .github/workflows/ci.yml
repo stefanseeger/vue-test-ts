@@ -8,7 +8,7 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
-# A workflow ru is made up of one or more jobs that can run sequentially or in parallel
+# A workflow ru is made up of one or more jobs that can run sequentially or in parallel.
 jobs:
   # JOB to run change detection
   changes:
